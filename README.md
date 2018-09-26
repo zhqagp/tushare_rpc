@@ -1,5 +1,5 @@
 # tushare_rpc
 
-##### pip3 install flask opendatatools html5lib xlrd tesseract
+##### pip3 install flask tushare
 
-##### 执行 python3 tushare.py
+##### 执行 python3 pros.py
