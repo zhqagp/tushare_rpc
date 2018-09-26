@@ -149,7 +149,7 @@ def pro_fina_mainbz():
 @app.route("/pro/moneyflow_hsgt", methods=['POST'])
 def pro_moneyflow_hsgt():
 
-    df = pro.moneyflow_hsgt(period=request.form['period'],type=request.form['type'])
+    df = pro.moneyflow_hsgt(start_date=request.form['start_date'],end_date=request.form['end_date'])
 
     return df.to_json(orient='table')
 
@@ -165,7 +165,7 @@ def pro_hsgt_top10():
 @app.route("/pro/ggt_top10", methods=['POST'])
 def pro_ggt_top10():
 
-    df = pro.ggt_top10(trade_date=request.form['period'])
+    df = pro.ggt_top10(trade_date=request.form['trade_date'])
 
     return df.to_json(orient='table')
 
