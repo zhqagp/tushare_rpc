@@ -205,5 +205,44 @@ def pro_top10_floatholders():
     return df.to_json(orient='table')
 
 
+@app.route("/pro/index_basic", methods=['POST'])
+def pro_index_basic():
+
+    df = pro.index_basic(market=request.form['market'])
+
+    return df.to_json(orient='table')
+
+
+@app.route("/pro/index_daily", methods=['POST'])
+def pro_index_daily():
+
+    df = pro.index_daily(ts_code=request.form['ts_code'])
+
+    return df.to_json(orient='table')
+
+
+@app.route("/pro/index_weight", methods=['POST'])
+def pro_index_weight():
+
+    df = pro.index_weight(index_code=request.form['index_code'],trade_date=request.form['trade_date'])
+
+    return df.to_json(orient='table')
+
+@app.route("/pro/tmt_twincome", methods=['POST'])
+def pro_tmt_twincome():
+
+    df = pro.tmt_twincome(item=request.form['item'])
+
+    return df.to_json(orient='table')
+
+
+@app.route("/pro/tmt_twincomedetail", methods=['POST'])
+def pro_tmt_twincomedetail():
+
+    df = pro.tmt_twincomedetail(item=request.form['item'],symbol=request.form['symbol'])
+
+    return df.to_json(orient='table')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
