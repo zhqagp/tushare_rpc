@@ -492,7 +492,7 @@ def inst_detail():
 @app.route("/shibor_data", methods=['POST'])
 def shibor_data():
 
-    df = ts.shibor_data(year=request.form['year'])
+    df = ts.shibor_data(year=int(request.form['year']))
 
     return df.to_json(orient='table')
 
@@ -500,7 +500,7 @@ def shibor_data():
 @app.route("/shibor_quote_data", methods=['POST'])
 def shibor_quote_data():
 
-    df = ts.shibor_quote_data(year=request.form['year'])
+    df = ts.shibor_quote_data(year=int(request.form['year']))
 
     return df.to_json(orient='table')
 
@@ -508,7 +508,7 @@ def shibor_quote_data():
 @app.route("/shibor_ma_data", methods=['POST'])
 def shibor_ma_data():
 
-    df = ts.shibor_ma_data(year=request.form['year'])
+    df = ts.shibor_ma_data(year=int(request.form['year']))
 
     return df.to_json(orient='table')
 
@@ -516,14 +516,14 @@ def shibor_ma_data():
 @app.route("/lpr_data", methods=['POST'])
 def lpr_data():
 
-    df = ts.lpr_data(year=request.form['year'])
+    df = ts.lpr_data(year=int(request.form['year']))
 
     return df.to_json(orient='table')
 
 @app.route("/lpr_ma_data", methods=['POST'])
 def lpr_ma_data():
 
-    df = ts.lpr_ma_data(year=request.form['year'])
+    df = ts.lpr_ma_data(year=int(request.form['year']))
 
     return df.to_json(orient='table')
 
