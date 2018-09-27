@@ -9,7 +9,11 @@ import tushare as ts
 
 app = Flask(__name__)
 
-ts.set_token('177ab952b023be1c941dcf9e8c852c3bb0727502a2f372fa731d607e')
+
+
+ts.set_token('177ab952b023be1c941dcf9e8c852c3bb0727502a2f372fa731d607e')#这里填写你的token
+
+
 pro = ts.pro_api()
 
 @app.route("/")
